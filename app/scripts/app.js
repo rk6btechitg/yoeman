@@ -27,4 +27,5 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+  .constant('mainConstant', 'Welcome!' );

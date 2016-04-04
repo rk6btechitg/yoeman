@@ -6,14 +6,19 @@ describe('Controller: MainCtrl', function () {
   beforeEach(module('project1App'));
 
   var MainCtrl,
-    scope;
+    scope,
+    mainConstantObj;
+
+  beforeEach(module(function ($provide) {
+      $provide.constant('mainConstant', 'Welcome!' );
+  }));
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
+  beforeEach(inject(function ($controller, $rootScope, mainConstant) {
     scope = $rootScope.$new();
     MainCtrl = $controller('MainCtrl', {
-      $scope: scope
-      // place here mocked dependencies
+      $scope: scope,
+      mainConstantObj : mainConstant
     });
   }));
 
@@ -21,9 +26,8 @@ describe('Controller: MainCtrl', function () {
     expect(MainCtrl.awesomeThings.length).toBe(3);
   });
 
-  it('should return true', function () {
-    console.log(MainCtrl);
-    //expect(MainCtrl.myawesomeThings).toBe(true);
-  });
-
+  it('should contain constant', inject(function (mainConstant) {
+    expect(mainConstant).toBe('Welcome!');
+  }));
+  
 });
