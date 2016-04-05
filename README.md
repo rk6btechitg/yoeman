@@ -40,3 +40,4 @@ Running `grunt test` will run the unit tests with karma.
  - Testing References
 
    - [http://www.sitepoint.com/unit-testing-angularjs-services-controllers-providers/?utm_source=sitepoint&utm_medium=relatedsidebar&utm_term=javascript](http://www.sitepoint.com/unit-testing-angularjs-services-controllers-providers/?utm_source=sitepoint&utm_medium=relatedsidebar&utm_term=javascript)
+   - [http://www.benlesh.com/2013/06/angular-js-unit-testing-services.html](http://www.benlesh.com/2013/06/angular-js-unit-testing-services.html)

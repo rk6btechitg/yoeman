@@ -17,7 +17,8 @@ module.exports = function (grunt) {
     useminPrepare: 'grunt-usemin',
     ngtemplates: 'grunt-angular-templates',
     cdnify: 'grunt-google-cdn',
-    plato: 'grunt-plato'
+    plato: 'grunt-plato',
+    jscs: 'grunt-jscs'
   });
 
   // Configurable paths for the application
@@ -131,6 +132,13 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/scripts/{,*/}*.js'
         ]
       }
+    },
+
+    jscs: {
+        src: "app/scripts/**/*.js",
+        options: {
+            config: ".jscsrc"
+        }
     },
 
     // Empties folders to start fresh
@@ -465,6 +473,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('analyze', [
     'jshint',
+    'jscs'
     //'plato'
   ]);
 
