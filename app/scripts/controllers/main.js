@@ -8,7 +8,7 @@
  * Controller of the project1App
  */
 angular.module('project1App')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', function ($scope, forecast) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -17,4 +17,10 @@ angular.module('project1App')
     $scope.myawesomeThings = function() {
     	return true;
     };
+    forecast.currentData().then(function(response){
+      var result = response.data;
+    }, function(error) {
+      var errorResponse = error;
+    });
+
   });

@@ -79,6 +79,7 @@
         "mockData": false,
         "moment" : false,
         "MSRCommonForRead" : false,
-        "console" : true
+        "console" : true,
+        "jasmine": false
     }
 }
